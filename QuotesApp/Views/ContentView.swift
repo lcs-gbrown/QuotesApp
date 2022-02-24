@@ -17,6 +17,11 @@ struct ContentView: View {
                                            senderLink: "",
                                            quoteLink: "")
     
+    
+    @State var favourites: [Quote] = []
+    
+    @State var currentQuoteAddedToFavourites: Bool = false
+    
     var body: some View {
         VStack {
             
@@ -32,6 +37,15 @@ struct ContentView: View {
             Image(systemName: "heart.circle")
                 .resizable()
                 .frame(width: 40, height: 40)
+                .foregroundColor(currentQuoteAddedToFavourites == true ? .red : .secondary)
+                .onTapGesture {
+                    if currentQuoteAddedToFavourites ==
+                        false {
+                        favourites.append(currentQuote)
+                        
+                        currentQuoteAddedToFavourites = true
+                    }
+                }
             
             Button(action: {
                 print("Button was pressed")
@@ -93,6 +107,7 @@ struct ContentView: View {
             
             print(error)
         }
+        currentQuoteAddedToFavourites = false
     }
 }
 
