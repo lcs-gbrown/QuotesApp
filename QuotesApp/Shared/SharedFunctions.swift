@@ -14,4 +14,4 @@ func getDocumentsDirectory() -> URL {
 }
 
 // Define a file label (or file name) that we will write to within that directory
-let savedFavouritesLabel = "savedFavourites"
+let savedQuotesLabel = "savedQuotes"
