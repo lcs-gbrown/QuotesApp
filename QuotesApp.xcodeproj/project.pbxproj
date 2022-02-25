@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4211E827C96F16001AE014 /* SharedFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4211E727C96F16001AE014 /* SharedFunctions.swift */; };
 		0A5001A027C530180031612C /* QuotesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A50019F27C530180031612C /* QuotesAppApp.swift */; };
 		0A5001A227C530180031612C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5001A127C530180031612C /* ContentView.swift */; };
 		0A5001A427C530210031612C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5001A327C530210031612C /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A4211E727C96F16001AE014 /* SharedFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFunctions.swift; sourceTree = "<group>"; };
 		0A50019C27C530180031612C /* QuotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A50019F27C530180031612C /* QuotesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesAppApp.swift; sourceTree = "<group>"; };
 		0A5001A127C530180031612C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4211E627C96F02001AE014 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0A4211E727C96F16001AE014 /* SharedFunctions.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		0A50019327C530180031612C = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		0A50019E27C530180031612C /* QuotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A4211E627C96F02001AE014 /* Shared */,
 				0A5001AE27C5304F0031612C /* Views */,
 				0A5001AD27C530480031612C /* Model */,
 				0A50019F27C530180031612C /* QuotesAppApp.swift */,
@@ -156,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4211E827C96F16001AE014 /* SharedFunctions.swift in Sources */,
 				0A5001A227C530180031612C /* ContentView.swift in Sources */,
 				0A5001B027C531D00031612C /* Quote.swift in Sources */,
 				0A5001A027C530180031612C /* QuotesAppApp.swift in Sources */,

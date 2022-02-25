@@ -11,7 +11,7 @@ struct ContentView: View {
     //MARK: Stored Properties
     //Holds the current quote
     
-    @State var currentQuote: Quote = Quote(quoteText: "",
+    @State var currentQuote: Quote = Quote(quoteText: "lala",
                                            quoteAuthor: "",
                                            senderName: "",
                                            senderLink: "",
@@ -65,10 +65,9 @@ struct ContentView: View {
                 Spacer()
             }
             
-            List {
-                Text("quote 1")
-                Text("quote 2")
-                Text("quote 3")
+            List(favourites, id : \.self) {
+                currentFavourite in
+                Text(currentFavourite.quoteText)
             }
             
             Spacer()
@@ -88,7 +87,7 @@ struct ContentView: View {
     }
     
     func loadNewQuote() async {
-        let url = URL(string: "http://forismatic.com/en/31b0d37c07/")!
+        let url = URL(string: "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en")!
         
         var request = URLRequest(url: url)
         
@@ -109,6 +108,8 @@ struct ContentView: View {
         }
         currentQuoteAddedToFavourites = false
     }
+    
+    
 }
 
 
