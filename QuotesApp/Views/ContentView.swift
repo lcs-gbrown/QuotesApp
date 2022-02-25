@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     //MARK: Stored Properties
-    //Holds the current quote
+    // Detect when app moves between the foreground, background, and inactive states
+    // NOTE: A complete list of keypaths that can be used with @Environment can be found here:
+    // https://developer.apple.com/documentation/swiftui/environmentvalues
+    @Environment(\.scenePhase) var scenePhase
     
+    //Holds the current quote
     @State var currentQuote: Quote = Quote(quoteText: "lala",
                                            quoteAuthor: "",
                                            senderName: "",
@@ -72,6 +76,27 @@ struct ContentView: View {
             
             Spacer()
             
+        }
+        // React to changes of state for the app (foreground, background, and inactive)
+        .onChange(of: scenePhase) { newPhase in
+
+            if newPhase == .inactive {
+
+                print("Inactive")
+
+            } else if newPhase == .active {
+
+                print("Active")
+
+            } else if newPhase == .background {
+
+                print("Background")
+
+                // Permanently save the list of tasks
+                persistQuotes()
+
+            }
+
         }
         
         .task {
